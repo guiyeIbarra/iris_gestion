@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lapicera Bic",
+    "precio": 900,
+    "stock": 18,
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "Cuaderno 42hojas",
+    "precio": 1500,
+    "stock": 14,
+    "activo": true
+  },
+  {
+    "id": 3,
+    "nombre": "Lápiz negro",
+    "precio": 300,
+    "stock": 91,
+    "activo": true
+  },
+  {
+    "id": 4,
+    "nombre": "Plasticola 250gr",
+    "precio": 2000,
+    "stock": 16,
+    "activo": true
+  }
+]

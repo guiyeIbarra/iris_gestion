@@ -1,0 +1,274 @@
+[
+  {
+    "id": 1,
+    "fecha": "2026-01-29T01:28:36.333Z",
+    "items": [
+      {
+        "productoId": 1,
+        "cantidad": 2
+      },
+      {
+        "productoId": 2,
+        "cantidad": 1
+      }
+    ],
+    "total": 2200
+  },
+  {
+    "id": 2,
+    "fecha": "2026-01-29T01:44:53.271Z",
+    "items": [
+      {
+        "productoId": 1,
+        "cantidad": 2
+      },
+      {
+        "productoId": 2,
+        "cantidad": 1
+      }
+    ],
+    "total": 2200
+  },
+  {
+    "id": 3,
+    "fecha": "2026-01-29T01:46:32.789Z",
+    "items": [
+      {
+        "productoId": 3,
+        "cantidad": 2
+      },
+      {
+        "productoId": 4,
+        "cantidad": 1
+      }
+    ],
+    "total": 1500
+  },
+  {
+    "id": 4,
+    "fecha": "2026-01-29T22:35:16.871Z",
+    "items": [
+      {
+        "productoId": 3,
+        "cantidad": 5
+      }
+    ],
+    "total": 1500,
+    "anulada": true
+  },
+  {
+    "id": 5,
+    "fecha": "2026-01-29T23:01:56.582Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera",
+        "precioUnitario": 500,
+        "cantidad": 2,
+        "subtotal": 1000
+      },
+      {
+        "productoId": 2,
+        "nombre": "Cuaderno",
+        "precioUnitario": 1200,
+        "cantidad": 1,
+        "subtotal": 1200
+      }
+    ],
+    "total": 2200
+  },
+  {
+    "id": 6,
+    "fecha": "2026-01-29T23:45:06.566Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera",
+        "precioUnitario": 500,
+        "cantidad": 2,
+        "subtotal": 1000
+      }
+    ],
+    "total": 1000
+  },
+  {
+    "id": 7,
+    "fecha": "2026-01-30T13:02:50.398Z",
+    "items": [
+      {
+        "productoId": 2,
+        "nombre": "Cuaderno",
+        "precioUnitario": 1200,
+        "cantidad": 3,
+        "subtotal": 3600
+      }
+    ],
+    "total": 3600
+  },
+  {
+    "id": 8,
+    "fecha": "2026-01-30T13:03:20.772Z",
+    "items": [
+      {
+        "productoId": 3,
+        "nombre": "lapiz",
+        "precioUnitario": 300,
+        "cantidad": 14,
+        "subtotal": 4200
+      }
+    ],
+    "total": 4200,
+    "anulada": true
+  },
+  {
+    "id": 9,
+    "fecha": "2026-01-30T13:21:01.153Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera",
+        "precioUnitario": 500,
+        "cantidad": 2,
+        "subtotal": 1000
+      },
+      {
+        "productoId": 3,
+        "nombre": "lapiz",
+        "precioUnitario": 300,
+        "cantidad": 2,
+        "subtotal": 600
+      },
+      {
+        "productoId": 4,
+        "nombre": "plasticola",
+        "precioUnitario": 900,
+        "cantidad": 1,
+        "subtotal": 900
+      }
+    ],
+    "total": 2500,
+    "anulada": true
+  },
+  {
+    "id": 10,
+    "fecha": "2026-01-30T13:26:59.988Z",
+    "items": [
+      {
+        "productoId": 3,
+        "nombre": "lapiz",
+        "precioUnitario": 300,
+        "cantidad": 2,
+        "subtotal": 600
+      },
+      {
+        "productoId": 4,
+        "nombre": "plasticola",
+        "precioUnitario": 900,
+        "cantidad": 1,
+        "subtotal": 900
+      }
+    ],
+    "total": 1500
+  },
+  {
+    "id": 11,
+    "fecha": "2026-01-30T13:32:48.169Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera",
+        "precioUnitario": 500,
+        "cantidad": 1,
+        "subtotal": 500
+      },
+      {
+        "productoId": 3,
+        "nombre": "lapiz",
+        "precioUnitario": 300,
+        "cantidad": 3,
+        "subtotal": 900
+      }
+    ],
+    "total": 1400
+  },
+  {
+    "id": 12,
+    "fecha": "2026-01-31T01:34:36.872Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera",
+        "precioUnitario": 500,
+        "cantidad": 1,
+        "subtotal": 500
+      },
+      {
+        "productoId": 4,
+        "nombre": "plasticola",
+        "precioUnitario": 900,
+        "cantidad": 1,
+        "subtotal": 900
+      }
+    ],
+    "total": 1400,
+    "anulada": false
+  },
+  {
+    "id": 13,
+    "fecha": "2026-02-01T15:47:38.507Z",
+    "items": [
+      {
+        "productoId": 5,
+        "nombre": "mochila Chenson",
+        "precioUnitario": 29500,
+        "cantidad": 1,
+        "subtotal": 29500
+      },
+      {
+        "productoId": 3,
+        "nombre": "lapiz",
+        "precioUnitario": 300,
+        "cantidad": 3,
+        "subtotal": 900
+      }
+    ],
+    "total": 30400,
+    "anulada": true
+  },
+  {
+    "id": 14,
+    "fecha": "2026-02-04T21:33:53.239Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera Bic",
+        "precioUnitario": 900,
+        "cantidad": 2,
+        "subtotal": 1800
+      },
+      {
+        "productoId": 2,
+        "nombre": "Cuaderno 42hojas",
+        "precioUnitario": 1500,
+        "cantidad": 1,
+        "subtotal": 1500
+      },
+      {
+        "productoId": 3,
+        "nombre": "Lápiz negro",
+        "precioUnitario": 300,
+        "cantidad": 2,
+        "subtotal": 600
+      },
+      {
+        "productoId": 4,
+        "nombre": "Plasticola 250gr",
+        "precioUnitario": 2000,
+        "cantidad": 1,
+        "subtotal": 2000
+      }
+    ],
+    "total": 5900,
+    "anulada": false
+  }
+]

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iris Gestión</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Iris Gestión</h1>
+
+  <section>
+    <h2>Productos</h2>
+    <ul id="lista-productos"></ul>
+  </section>
+
+  <section id="admin-productos">
+    <h2>Administración de productos</h2>
+
+    <input type="hidden" id="producto-id">
+
+    <input type="text" id="nombre" placeholder="Nombre del producto">
+    <input type="number" id="precio" placeholder="Precio">
+    <input type="number" id="stock" placeholder="Stock">
+
+    <button id="btn-guardar" type="button">Guardar producto</button>
+
+    <p id="mensaje-producto"></p>
+  </section>
+
+
+  <section>
+  <h2>Registrar venta</h2>
+
+  <select id="producto-select"></select>
+
+  <input
+    type="number"
+    id="cantidad"
+    placeholder="Cantidad"
+    min="1"
+  >
+
+  <button id="btn-agregar">Agregar al carrito</button>
+
+  <h3>Carrito</h3>
+  <ul id="carrito"></ul>
+
+  <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+
+
+  <button id="btn-confirmar">Confirmar venta</button>
+
+  <button id="btn-vaciar">Vaciar carrito</button>
+
+
+  <p id="mensaje"></p>
+</section>
+
+
+<div id="resultadoResumen"></div>
+<h2>Resumen diario</h2>
+<input type="date" id="fechaResumen">
+<button id="btnResumen">Ver resumen</button>
+
+
+
+  <section>
+    <h2>Ventas de hoy</h2>
+    <div id="resumen"></div>
+    <ul id="listaVentas"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
