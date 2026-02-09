@@ -44,18 +44,39 @@ app.get('/', (req, res) => {
 */
 app.get('/productos', (req, res) => {
   const productos = leerProductos();
+
+  productos.sort((a, b) =>
+    a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
+  );
+
   res.json(productos);
 });
 
 app.get('/ventas', (req, res) => {
-  const { fecha, desde, hasta } = req.query;
+  const { fecha, limit = 5, offset = 0 } = req.query;
   let ventas = leerVentas();
 
   if (fecha) {
     ventas = ventas.filter(v => v.fecha.startsWith(fecha));
   }
 
-  if (desde && hasta) {
+  // ordenar: más recientes primero
+  ventas.sort((a, b) => {
+  const diffFecha = new Date(b.fecha) - new Date(a.fecha);
+  if (diffFecha !== 0) return diffFecha;
+  return b.id - a.id;
+});
+
+
+  //const limite = parseInt(limit) || ventas.length;
+  const start = parseInt(offset);
+  const end = parseInt(limit);
+
+  const ventasPaginadas = ventas.slice(start, end);
+  res.json(ventasPaginadas);
+
+
+  /*if (desde && hasta) {
     const d = new Date(desde);
     const h = new Date(hasta);
 
@@ -65,7 +86,7 @@ app.get('/ventas', (req, res) => {
     });
   }
 
-  res.json(ventas);
+  res.json(ventas);*/
 });
 
 app.get('/ventas/resumen', (req, res) => {

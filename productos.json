@@ -3,28 +3,77 @@
     "id": 1,
     "nombre": "Lapicera Bic",
     "precio": 900,
-    "stock": 18,
+    "stock": 17,
     "activo": true
   },
   {
     "id": 2,
     "nombre": "Cuaderno 42hojas",
     "precio": 1500,
-    "stock": 14,
+    "stock": 13,
     "activo": true
   },
   {
     "id": 3,
     "nombre": "Lápiz negro",
     "precio": 300,
-    "stock": 91,
+    "stock": 89,
     "activo": true
   },
   {
     "id": 4,
     "nombre": "Plasticola 250gr",
     "precio": 2000,
-    "stock": 16,
+    "stock": 14,
+    "activo": true
+  },
+  {
+    "id": 5,
+    "nombre": "Lápices de color Filgo x12",
+    "precio": 1500,
+    "stock": 12,
+    "activo": true
+  },
+  {
+    "id": 6,
+    "nombre": "Lápices de color Filgo x12 +2 lápiz negro",
+    "precio": 2500,
+    "stock": 12,
+    "activo": true
+  },
+  {
+    "id": 7,
+    "nombre": "Regla 20cm",
+    "precio": 300,
+    "stock": 20,
+    "activo": true
+  },
+  {
+    "id": 8,
+    "nombre": "Regla 30cm",
+    "precio": 500,
+    "stock": 20,
+    "activo": true
+  },
+  {
+    "id": 9,
+    "nombre": "Hojas Exito x96 con banda",
+    "precio": 8900,
+    "stock": 15,
+    "activo": true
+  },
+  {
+    "id": 10,
+    "nombre": "Bandas elásticas x50g",
+    "precio": 1500,
+    "stock": 6,
+    "activo": true
+  },
+  {
+    "id": 11,
+    "nombre": "Bandas elásticas x100g",
+    "precio": 2500,
+    "stock": 6,
     "activo": true
   }
 ]

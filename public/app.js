@@ -16,7 +16,6 @@ async function cargarProductos() {
   renderProductos();
 }
 
-
 // fecha de hoy en formato YYYY-MM-DD
 const hoy = new Date().toISOString().split('T')[0];
 
@@ -34,8 +33,6 @@ btnGuardar.addEventListener('click', (e) => {
   }
   
   const producto = { nombre, precio, stock, };
-
-
   
   // EDITAR
   if (inputId.value) {
@@ -51,8 +48,6 @@ btnGuardar.addEventListener('click', (e) => {
         cargarProductos();
       });
 
-
-
   // CREAR
   } else {
     fetch('/productos', {
@@ -61,7 +56,6 @@ btnGuardar.addEventListener('click', (e) => {
       body: JSON.stringify(producto)
     })
 
-    
       .then(res => res.json())
       .then(() => {
         mensajeProducto.textContent = 'Producto creado';
@@ -76,8 +70,6 @@ btnGuardar.addEventListener('click', (e) => {
   inputStock.value = '';
 }
 });
-
-
 
 // cargar productos
 function cargarProductos() {
@@ -147,8 +139,6 @@ btnEliminar.addEventListener('click', () => {
     alert(err.message);
     console.error(err.message);
   });
-
-
   
 });
 
@@ -163,49 +153,6 @@ productosUl.appendChild(li);
 }
 cargarProductos();
 
-/*
-function cargarProductos() {
-  fetch('/productos')
-    .then(res => res.json())
-    .then(productos => renderProductos(productos));
-
-fetch('/productos')
-  .then(res => res.json())
-  .then(productos => {
- 
-productos.forEach(p => {
-  const li = document.createElement('li');
-  li.textContent = `${p.nombre} - $${p.precio} (stock: ${p.stock})`;
-
-  const btnEditar = document.createElement('button');
-  btnEditar.textContent = 'Editar';
-  btnEditar.style.marginLeft = '10px';
-
-  btnEditar.addEventListener('click', () => {
-    inputId.value = p.id;
-    inputNombre.value = p.nombre;
-    inputPrecio.value = p.precio;
-    inputStock.value = p.stock;
-  });
-
-  li.appendChild(btnEditar);
-  productosUl.appendChild(li);
-  });
-};
-*/
-
-
-// cargar ventas del día
-fetch(`/ventas?fecha=${hoy}`)
-  .then(res => res.json())
-  .then(ventas => {
-    ventas.forEach(v => {
-      const li = document.createElement('li');
-      li.textContent = `Venta #${v.id} - Total $${v.total}`;
-      ventasUl.appendChild(li);
-    });
-  });
-
 // resumen diario
 fetch(`/ventas/resumen?fecha=${hoy}`)
   .then(res => res.json())
@@ -213,6 +160,13 @@ fetch(`/ventas/resumen?fecha=${hoy}`)
     resumenDiv.textContent =
       `Ventas: ${r.cantidadVentas} | Total vendido: $${r.totalVendido}`;
   });
+
+
+const btnBuscarVentas = document.getElementById('btnBuscarVentas');
+const btnVerMas = document.getElementById('btnVerMas');
+const fechaVentas = document.getElementById('fechaVentas');
+const listaVentas = document.getElementById('listaVentas');
+
 
 const selectProducto = document.getElementById('producto-select');
 const cantidadInput = document.getElementById('cantidad');
@@ -380,28 +334,13 @@ document.getElementById('btnResumen').addEventListener('click', () => {
 
   html += `<li>${nombre}: ${data.productos[id]} unidades</li>`;
 }
-
-/*
-      for (const id in data.productos) {
-      const producto = productos.find(p => p.id === parseInt(id));
-
-      const nombre = producto ? producto.nombre : `ID ${id}`;
-
-      html += `<li>${nombre}: ${data.productos[id]} unidades</li>`;
-      }
-
-      /*
-      for (const id in data.productos) {
-        html += `<li>Producto ID ${id}: ${data.productos[id]} unidades</li>`;
-      }
-      */
       html += '</ul>';
 
       document.getElementById('resultadoResumen').innerHTML = html;
     });
 });
 
-
+/*
 function anularVenta(id) {
   fetch(`/ventas/${id}/anular`, { method: 'PUT' })
     .then(res => res.json())
@@ -412,13 +351,77 @@ function anularVenta(id) {
     });
 }
 
-function cargarVentas() {
-  fetch('/ventas')
+  /*fetch(`/ventas?fecha=${fecha}&limit=5`)
     .then(res => res.json())
-    .then(data => renderVentas(data));
+    .then(ventas => {
+      listaVentas.innerHTML = '';
+
+      if (ventas.length === 0) {
+        listaVentas.innerHTML = '<li>No hay ventas</li>';
+        return;
+      }
+
+      ventas.forEach(v => {
+        const li = document.createElement('li');
+        li.textContent = `#${v.id} - $${v.total} - ${new Date(v.fecha).toLocaleTimeString()}`;
+        listaVentas.appendChild(li);
+      });
+    });*/
+
+let offsetVentas = 0;
+const LIMITE = 5;
+let fechaActual = null;
+
+btnBuscarVentas.addEventListener('click', () => {
+  fechaActual = fechaVentas.value;
+  if (!fechaActual) return alert('Seleccione una fecha');
+  cargarVentas({ reset: true });
+});
+
+btnVerMas.addEventListener('click', () => {
+  cargarVentas();
+});
+
+
+function cargarVentas({ reset = false } = {}) {
+  if (!fechaActual) return;
+
+  if (reset) {
+    offsetVentas = 0;
+    listaVentas.innerHTML = '';
+  }
+
+  fetch(`/ventas?fecha=${fechaActual}&offset=${offsetVentas}&limit=${LIMITE}`)
+    .then(res => res.json())
+    .then(ventas => {
+
+      if (!Array.isArray(ventas)) {
+        console.error('Respuesta inesperada:', ventas);
+        return;
+      }
+
+      if (ventas.length === 0 && offsetVentas === 0) {
+        listaVentas.innerHTML = '<li>No hay ventas</li>';
+        btnVerMas.style.display = 'none';
+        return;
+      }
+
+      ventas.forEach(v => {
+        const li = document.createElement('li');
+        li.textContent = `#${v.id} - $${v.total} - ${new Date(v.fecha).toLocaleTimeString()}`;
+        listaVentas.appendChild(li);
+      });
+
+      offsetVentas += ventas.length;
+
+      btnVerMas.style.display =
+        ventas.length < LIMITE ? 'none' : 'inline';
+    })
+    .catch(err => console.error(err));
 }
 
-cargarVentas();
+
+
 cargarProductos();
 
 

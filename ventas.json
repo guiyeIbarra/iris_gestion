@@ -270,5 +270,57 @@
     ],
     "total": 5900,
     "anulada": false
+  },
+  {
+    "id": 15,
+    "fecha": "2026-02-08T20:56:16.190Z",
+    "items": [
+      {
+        "productoId": 1,
+        "nombre": "Lapicera Bic",
+        "precioUnitario": 900,
+        "cantidad": 1,
+        "subtotal": 900
+      },
+      {
+        "productoId": 3,
+        "nombre": "Lápiz negro",
+        "precioUnitario": 300,
+        "cantidad": 2,
+        "subtotal": 600
+      }
+    ],
+    "total": 1500,
+    "anulada": false
+  },
+  {
+    "id": 16,
+    "fecha": "2026-02-08T20:56:26.775Z",
+    "items": [
+      {
+        "productoId": 4,
+        "nombre": "Plasticola 250gr",
+        "precioUnitario": 2000,
+        "cantidad": 2,
+        "subtotal": 4000
+      }
+    ],
+    "total": 4000,
+    "anulada": false
+  },
+  {
+    "id": 17,
+    "fecha": "2026-02-08T20:56:32.950Z",
+    "items": [
+      {
+        "productoId": 2,
+        "nombre": "Cuaderno 42hojas",
+        "precioUnitario": 1500,
+        "cantidad": 1,
+        "subtotal": 1500
+      }
+    ],
+    "total": 1500,
+    "anulada": false
   }
 ]
